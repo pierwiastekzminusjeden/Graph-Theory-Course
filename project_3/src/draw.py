@@ -27,8 +27,8 @@ def draw_graph(adjMatrix: Graph, file: str):
     ax.add_artist(bigCircle)
 
     #kolory malego kola w RGB
-    smallCircleFill = (1, 153/255, 51/255)
-    smallCircleEdge = (1, 51/255, 0)
+    smallCircleFill = ('orange')
+    smallCircleEdge = ('red')
     coordinates = {}
 
     for i in range(tops):
@@ -37,15 +37,16 @@ def draw_graph(adjMatrix: Graph, file: str):
         coordinates[i] = (calculateX,calculateY)
         x = plt.Circle((calculateX,calculateY), smallCircleRadius, facecolor=smallCircleFill, edgecolor = smallCircleEdge, linewidth=3)
         ax.add_artist(x)                                                       #rysowanie i-tego malego kola
-        plt.text(calculateX, calculateY, i , fontsize=20)                    #wstawianie cyferki do kola
+        plt.text(calculateX, calculateY, i , fontsize=25)                    #wstawianie cyferki do kola
 
 
     #tutaj sprawdzam czy sasiaduja i jak tak to rysuje linie miedzy nimi
     for i in range(len(adjMatrix.matrix)):
         for j in range(len(adjMatrix.matrix[i])):
-            if adjMatrix.matrix[i][j] == 1:
-                # print(coordinates[i][0], coordinates[i][1], coordinates[j][0], coordinates[j][1])
+            if adjMatrix.matrix[i][j] != 0:
+                #print(coordinates[i][0], coordinates[i][1], coordinates[j][0], coordinates[j][1])
                 plt.plot([coordinates[i][0], coordinates[j][0]], [coordinates[i][1], coordinates[j][1]], marker='o')
+                plt.text((coordinates[i][0]+coordinates[j][0])/2, (coordinates[i][1] + coordinates[j][1])/2, adjMatrix.matrix[i][j] , fontsize=20)                    #wstawianie cyferki do kola
 
     #potrzebne do ustalenia rozmiarow osi wspolrzednych
     plt.ylim([0, 30])
