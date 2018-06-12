@@ -137,7 +137,6 @@ Uses GNP and Kosaraju methods'''
 
     # task 3
     def init_graph(self, selected, path_list, parent_list):
-        '''init Marcin '''
         for i in range(len(path_list)):
             path_list[i] = math.inf
             parent_list[i] = -1
