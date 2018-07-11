@@ -5,7 +5,7 @@ In every single task we gain experience both in using python and implementing gr
 
 Team members:  
 Karolina Mizera github.com/cocoyenn  
-Krystian Molenda  github.com/pierwiastekzminusjeden
+Krystian Molenda  github.com/pierwiastekzminusjeden  
 Marcin Miś  github.com/mrcmis  
 
 Example of graph visualization.    
